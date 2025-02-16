@@ -26,8 +26,8 @@ jobs:
 
       - name: Set variables
         run: |
-          echo "RELEASE_NAME=$(date +%Y-%m-%d)" >> $GITHUB_ENV
-          echo "TAG_NAME=$(date +%Y-%m-%d)" >> $GITHUB_ENV
+          echo "RELEASE_NAME=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+          echo "TAG_NAME=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
         shell: bash
 
       - name: Build dat file
