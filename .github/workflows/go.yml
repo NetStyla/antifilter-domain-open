@@ -1,0 +1,59 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Build geosite.dat
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "**/README.md"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Set variables
+        run: |
+          echo "RELEASE_NAME=$(date +%Y-%m-%d)" >> $GITHUB_ENV
+          echo "TAG_NAME=$(date +%Y-%m-%d)" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Build dat file
+        run: |
+          go run ./ --exportlists=open-router --outputname=openrouter.dat
+
+      - name: List output directory
+        run: |
+          ls -R ./
+
+      - name: List directory before move
+        run: |
+          ls -R ./
+
+      - name: Move files to publish directory
+        run: |
+          mkdir -p publish
+          mv ./*.dat ./publish
+
+      - name: List publish directory
+        run: |
+          ls -R ./publish
+
+      - name: Release and upload assets
+        run: |
+          gh release create ${{ env.TAG_NAME }} -t ${{ env.RELEASE_NAME }} \
+            ./publish/*.dat
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
