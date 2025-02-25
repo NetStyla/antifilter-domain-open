@@ -514,3 +514,6 @@ regexp:(^|\.)dualstack\.ichnaea-web-.+\.amazonaws\.com$
 
 # Full
 full:netflix.com.edgesuite.net
+viber
+regexp:(\.|^)whatsapp\.net$
+regexp:(\.|^)whatsapp\.com$
