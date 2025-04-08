@@ -707,36 +707,3 @@ sagemaker.com.cn
 regexp:.+\.amzndns-cn\.(biz|cn|com|net)$ 
 regexp:.+\.awsdns-cn-[0-9][0-9]\.(biz|com|net|top)$ 
 regexp:.+\.awsdns-cn-[0-9][a-e0-9]\.cn$ 
-
-# All .xbox domains
-xbox
-
-forzamotorsport.net
-forzaracingchampionship.com
-forzarc.com
-gamepass.com
-orithegame.com
-renovacionxboxlive.com
-tellmewhygame.com
-xbox.co
-xbox.com
-xbox.eu
-xbox.org
-xbox360.co
-xbox360.com
-xbox360.eu
-xbox360.org
-xboxab.com
-xboxgamepass.com
-xboxgamestudios.com
-xboxlive.cn @cn
-xboxlive.com
-xboxone.co
-xboxone.com
-xboxone.eu
-xboxplayanywhere.com
-xboxservices.com
-xboxstudios.com
-xbx.lv
-iherb.com
-images-iherb.com
