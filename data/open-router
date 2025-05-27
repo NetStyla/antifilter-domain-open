@@ -743,6 +743,9 @@ sagemaker.com.cn
 regexp:.+\.amzndns-cn\.(biz|cn|com|net)$ 
 regexp:.+\.awsdns-cn-[0-9][0-9]\.(biz|com|net|top)$ 
 regexp:.+\.awsdns-cn-[0-9][a-e0-9]\.cn$ 
+
+
+
 dis.gd
 discord.co
 discord.com
@@ -1069,3 +1072,59 @@ oculusrift.com
 oculusvr.com
 powersunitedvr.com
 bestchange.ru
+
+# All .imdb domains
+imdb
+
+boxofficemojo.com
+imdb.com
+imdb.to
+media-imdb.com
+
+# All .kindle domains
+kindle
+
+# Kindle
+kindle.cn @cn
+kindle.co.jp
+kindle.co.uk
+kindle.com
+kindle.de
+kindle.es
+kindle.fr
+kindle.in
+kindle.it
+kindle.jp
+kindleoasis.cn @cn
+kindleoasis.com
+kindleoasis.com.cn @cn
+kindleoasis.info
+kindleoasis.jp
+kindleoasis.org
+kindleoasis.us
+kindleoasisnews.com
+kindleproject.com
+
+kindle4rss.com
+
+# Prime Video
+aiv-cdn.net
+amazonprimevideo.cn @cn
+amazonprimevideo.com.cn @cn
+amazonprimevideos.com
+amazonvideo.cc
+amazonvideo.com
+prime-video.com
+primevideo.cc
+primevideo.com
+primevideo.info
+primevideo.org
+primevideo.tv
+
+wfm.com
+wholecitiesfoundation.org
+wholefoods.com
+wholefoodsmarket.co.uk
+wholefoodsmarket.com
+wholekidsfoundation.org
+wholeplanetfoundation.org
