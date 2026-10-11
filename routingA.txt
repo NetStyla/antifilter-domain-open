@@ -1,13 +1,6 @@
 # ===================================================================
 #  Open-Router · RoutingA (маршрутизация v2rayA)
 #  Версия 2026-10-04
-#
-#  Как это работает:
-#   • По умолчанию весь трафик идёт НАПРЯМУЮ (российские сайты, банки, Госуслуги).
-#   • Через VPN идёт только то, что перечислено ниже: заблокированное и сервисы с региональными ограничениями.
-#   • Правила читаются сверху вниз, срабатывает ПЕРВОЕ подходящее: исключения (напрямую) стоят выше всего.
-#   • Списки antifilter и open-router (раздел 2) обновляются по расписанию (cron на роутере).
-#   • Добавить сайт: строка  domain(domain:example.com)->proxy  в подходящий раздел.
 # ===================================================================
 
 default : direct
@@ -28,11 +21,9 @@ ip(188.42.147.0/24)->direct
 
 # Наш список доменов (openrouter.dat, обновляется ежедневно)
 domain(ext:"openrouter.dat:open-router")->proxy
-# Antifilter community: домены (LoyalsoldierSite.dat) и IP-адреса (geoip.dat), по понедельникам
+# Antifilter community: домены (LoyalsoldierSite.dat) и IP-адреса (geoip.dat)
 domain(ext:"LoyalsoldierSite.dat:antifilter-community")->proxy
 ip(geoip:antifilter-community)->proxy
-# Полный список IP antifilter (11 тыс. сетей) выключен: тяжёлый для роутера
-#ip(geoip:antifilter)->proxy
 
 # -------------------------------------------------------------------
 # 3. СЕРВИСЫ ЧЕРЕЗ VPN (домены и IP-диапазоны по группам)
@@ -222,6 +213,7 @@ domain(domain:animego.org)->proxy
 domain(domain:rutracker.org)->proxy
 domain(domain:vimeo.com)->proxy
 domain(domain:kino.pub)->proxy
+domain(domain:kino.watch)->proxy
 ip(5.61.53.100/32, 5.188.189.95/32, 5.199.173.130/32, 5.199.173.153/32, 5.199.173.163/32, 5.252.22.90/32)->proxy
 ip(18.195.13.249/32, 38.180.44.76/32, 45.55.82.131/32, 46.166.167.66/31, 46.166.167.68/32, 54.37.134.16/32)->proxy
 ip(57.128.212.242/31, 91.215.42.193/32, 94.237.41.236/32, 94.237.42.247/32, 94.237.43.28/32, 94.237.111.107/32)->proxy
@@ -445,6 +437,8 @@ ip(217.65.73.0/24, 217.182.0.0/16, 217.217.26.0/24, 222.167.237.0/24)->proxy
 
 # -- Прочие сервисы ----------------------------------------------
 domain(domain:mos-gorsud.online)->proxy
+domain(domain:mos-gorsud.co)->proxy
+domain(domain:mos-gorsud.site)->proxy
 domain(domain:zerkalo.xyz)->proxy
 domain(domain:cdn.modrinth.com)->proxy
 domain(domain:redgifs.com)->proxy
